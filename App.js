@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import ReactBotao from './components/ReactBotao';
+import Contador from './components/Contador';
+import Saudacao from './components/Saudacao';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Saudacao nome="Emily" ></Saudacao>
+      <Contador/>
       <StatusBar style="auto" />
     </View>
   );
