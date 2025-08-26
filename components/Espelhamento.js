@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import {View, Text, Button, TextInput} from "react-native";
-import { useState } from "react/cjs/react.production";
 
-function Espelhamento(props){
-    const [texto, setTexto] = useState();
+function Espelhamento({ placeholder, label = "Você digitou:" }){
+    const [texto, setTexto] = useState("");
     
     return(
         <View>
-        <TextInput></TextInput>
+        <TextInput 
+        placeholder={placeholder}
+        value={texto}
+        onChangeText={setTexto}
+        />
+        <Text>
+            {texto.length > 0 ? `${label} ${texto}` : "Nada digitado ainda"}
+        </Text>
+        <Button title="Limpar" onPress={() => setTexto("")}></Button>
         </View>
     )
-    
 
 }
+
+export default Espelhamento;
